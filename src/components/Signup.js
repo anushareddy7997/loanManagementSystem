@@ -3,6 +3,7 @@ import axios from "axios"
 import { useNavigate, Link } from "react-router-dom"
 import './Signup.css';
 import { Box } from "@mui/material";
+import VpnKeyIcon from '@mui/icons-material/VpnKey';
 
 function Signup() {
     const history = useNavigate();
@@ -51,7 +52,7 @@ function Signup() {
             minHeight: '100vh',
           }}>
         <div className="signup-form-container">
-            <h1>Signup</h1>
+            <h1>Signup <VpnKeyIcon/></h1>
             <form action="POST" className="signup-form">
                 <input type="email" onChange={(e) => { setEmail(e.target.value) }} placeholder="Email" />
                 <input type="password" onChange={(e) => { setPassword(e.target.value) }} placeholder="Password" />

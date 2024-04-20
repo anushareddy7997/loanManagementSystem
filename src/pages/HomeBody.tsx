@@ -47,7 +47,7 @@ const containerStyle = {
   width: '100%',
 };
 
-const HomeHero: FC = () => {
+const HomeBody: FC = () => {
   const navigate = useNavigate();
   return (
     <ThemeProvider theme={theme}>
@@ -141,4 +141,4 @@ const HomeHero: FC = () => {
   );
 };
 
-export default HomeHero;
+export default HomeBody;
