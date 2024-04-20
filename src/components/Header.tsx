@@ -8,18 +8,34 @@ import InputBase from "@mui/material/InputBase";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
 import SearchIcon from "@mui/icons-material/Search";
 import { useNavigate } from "react-router-dom";
-import { Button, Stack, Tooltip } from "@mui/material";
+import { Button, Stack, ThemeProvider, Tooltip } from "@mui/material";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { useDispatch, useSelector } from "react-redux";
 import { SignoutAction } from "../redux/actions/SignoutAction";
 import { UnknownAction } from "redux";
 import { AppState } from "../redux/store";
+import HomeIcon from '@mui/icons-material/Home';
+import { createTheme } from '@mui/material/styles';
+import logo from '../asserts/logo.png'
+
+const theme = createTheme({
+  components: {
+    MuiAppBar: {
+      styleOverrides: {
+        root: {
+          backgroundColor:"#043324",
+          color: 'white', 
+        },
+      },
+    },
+  },
+});
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
+  backgroundcolor: "red",
   "&:hover": {
     backgroundColor: alpha(theme.palette.common.white, 0.25),
   },
@@ -65,12 +81,13 @@ export default function Navbar() {
   );
   const signoutHandler = () => {
     if (!isAuthenticated) {
-      navigate("/signin");
+      navigate("/login");
     } else {
       dispatch(SignoutAction() as unknown as UnknownAction);
     }
   };
   return (
+    <ThemeProvider theme={theme}>
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
@@ -81,7 +98,7 @@ export default function Navbar() {
             aria-label="open drawer"
             onClick={() => navigate("/")}
           >
-            <CreditCardIcon fontSize="large" />
+          <HomeIcon/> 
           </IconButton>
           <Typography
             variant="h6"
@@ -93,9 +110,9 @@ export default function Navbar() {
               cursor: "pointer",
               fontWeight: 700,
             }}
-          >
-            CCMS
+          >LLOYDS BANK
           </Typography>
+          <span > <img src={logo} alt="logo" style={{height:"52px", marginLeft:"-561px"}}/></span>
           <Stack direction="row" spacing={4} marginRight={10}>
             <Button
               onClick={() => navigate("/cards")}
@@ -138,8 +155,9 @@ export default function Navbar() {
               inputProps={{ "aria-label": "search" }}
             />
           </Search>
+          
           <Tooltip
-            title={isAuthenticated ? "Signout" : "Signin"}
+            title={isAuthenticated ? "Log Out" : "Log In"}
             onClick={signoutHandler}
           >
             <IconButton sx={{ color: "white" }}>
@@ -149,5 +167,6 @@ export default function Navbar() {
         </Toolbar>
       </AppBar>
     </Box>
+    </ThemeProvider>
   );
 }
