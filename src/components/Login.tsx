@@ -7,6 +7,7 @@ import './Login.css';
 import { toast } from 'react-toastify';
 import LockOpenIcon from '@mui/icons-material/LockOpen';
 import { Box } from "@mui/material";
+import Header from './Header'
 
 function Login() {
 
@@ -53,6 +54,8 @@ function Login() {
 
 
   return (
+    <>
+    <Header/>
     <Box sx={{  
       backgroundImage:
         "linear-gradient(to right,#043324,#104131, #05402d)",
@@ -85,6 +88,7 @@ function Login() {
 
       </div>
     </Box>
+    </>
   )
 }
 

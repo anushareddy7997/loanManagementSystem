@@ -5,6 +5,7 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cors())
+// import userRoutes from "./routes/users.js";
 
 
 
@@ -12,7 +13,7 @@ app.get("/",cors(),(req,res)=>{
 
 })
 
-
+//  app.use("/", userRoutes)
 app.post("/",async(req,res)=>{
     const{email,password}=req.body
 

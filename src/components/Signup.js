@@ -4,7 +4,7 @@ import { useNavigate, Link } from "react-router-dom"
 import './Signup.css';
 import { Box } from "@mui/material";
 import VpnKeyIcon from '@mui/icons-material/VpnKey';
-
+import Header from './Header'
 function Signup() {
     const history = useNavigate();
 
@@ -37,6 +37,8 @@ function Signup() {
 
 
     return (
+        <>
+        <Header/>
         <Box sx={{  
             backgroundImage:
               "linear-gradient(to right,#043324,#104131, #05402d)",
@@ -66,6 +68,7 @@ function Signup() {
 
         </div>
         </Box>
+        </>
     )
 }
 

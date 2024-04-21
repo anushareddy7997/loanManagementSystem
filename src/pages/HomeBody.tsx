@@ -87,7 +87,7 @@ const HomeBody: FC = () => {
                   justifyContent: "center",
                 }}
               >
-                <Box sx={{ mb: 3, marginLeft: "-140px" }}>
+                <Box sx={{ mb: 3, marginLeft: "-100px" }}>
                   <Typography
                     component="h2"
                     sx={{
@@ -97,14 +97,15 @@ const HomeBody: FC = () => {
                       lineHeight: 1.3,
                     }}
                   >
-                    Get your money moving
+                     Welcome to Lloyds Bank
+                   
                     <br />
 
                   </Typography>
                 </Box>
                 <Box sx={{ mb: 4, width: { xs: "100%", md: "70%" }, }}>
                   <Typography sx={{ color: "white", lineHeight: 1.6, fontSize: 25 }}>
-                   Welcome to Lloyds Bank Mortgage Loans
+                  We Value Your Money
                   </Typography>
                 </Box>
 
