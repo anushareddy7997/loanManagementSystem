@@ -25,5 +25,6 @@ export const updateUser = (req, res) => {
     user.name = req.body.name;
     user.email = req.body.email;
     user.contact = req.body.contact
+    user.address = req.body.address
     res.send("User Updated Successfully")
 }
