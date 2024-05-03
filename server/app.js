@@ -4,7 +4,7 @@ import bodyParser from 'body-parser';
 import collection from "./mongo.js";
 import router from './routers/users.js';
 const app = express();
-const port = 8000;
+const port = 5000;
 // app.use(express.json())
 // app.use(express.urlencoded({ extended: true }))
 // app.use(cors())
