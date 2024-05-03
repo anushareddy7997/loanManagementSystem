@@ -1,0 +1,27 @@
+/* src/components/LoginForm.css */
+.login-form-container {
+    color:#fff;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #00553e;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-image:
+    "linear-gradient(to right,#043324,#104131, #05402d)",
+}
+
+.link-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #00553e; /* Change this to your desired button color */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  .link-button:hover {
+    background-color: #77ba00; /* Change this to your desired hover color */
+  }
